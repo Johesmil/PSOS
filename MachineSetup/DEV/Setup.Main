@@ -7,5 +7,4 @@ echo "Installing Java Development Kit..."
 sudo apt-get install default-jdk
 echo "Finished installing Java Development Kit."
 
-
 echo "Finished installing prerequisites."

@@ -10,3 +10,4 @@
 ## Manual Installations
 
 - Install GitEye @ http://www.collab.net/products/giteye
+
