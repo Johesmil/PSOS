@@ -2,4 +2,4 @@
 Private, Secure and Open Source
 
 ## Machine Setup Instructions
-[a relative link](documentation/SetupMachineDev.md)
+[Development environment (DEV)](/Documentation/SetupMachineDEV.md)
