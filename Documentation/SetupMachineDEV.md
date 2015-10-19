@@ -10,4 +10,15 @@
 ## Manual Installations
 
 - Install GitEye @ http://www.collab.net/products/giteye
+- Connect to the johesmil/PSOS repository at GitHub and fetch files. Put in /home/johannes/git/PSOS directory
+
+## Configurations
+
+### Apache2
+
+- Run command: sudo cp -R /home/git/PSOS/MachineSetup/DEV/000-default.conf /etc/apache2/sites-available
+- Run command: sudo service apache2 restart
+- Open 127.0.0.1 or localhost in browser and verify it works.
+
+
 

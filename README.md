@@ -1,4 +1,5 @@
 # PSOS
 Private, Secure and Open Source
 
-Test
+## Machine Setup Instructions
+[a relative link](documentation/SetupMachineDev.md)
