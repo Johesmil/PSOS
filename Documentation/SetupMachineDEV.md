@@ -10,6 +10,7 @@
 ## Manual Installations
 
 - Install GitEye @ http://www.collab.net/products/giteye
+- Install Eclipse @ https://www.eclipse.org/downloads/
 - Connect to the johesmil/PSOS repository at GitHub and fetch files. Put in /home/johannes/git/PSOS directory
 
 ## Configurations
