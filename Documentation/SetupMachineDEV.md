@@ -36,8 +36,15 @@ https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-
 - Run command: gedit ~/.bashrc
 - Paste the following at the end of the file:
 
+```sh
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64  
 export CATALINA_HOME=/opt/tomcat  
+```
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64  
+export CATALINA_HOME=/opt/tomcat  
+```
 
 - Run command: $CATALINA_HOME/bin/startup.sh
 - Verify that Tomcat is started by opening localhost:8080 in browser
