@@ -47,7 +47,7 @@ export CATALINA_HOME=/opt/tomcat
 *These steps will create group and user called tomcat, and set their permissions to run the service.*
 
 **Current user permissions (I think)**
-- Run command: sudo chmod 755 /etc/init.d/tomcat8028
+- Run command: `sudo chmod 755 /etc/init.d/tomcat8028`
 
 **Tomcat permissions**
 - Run command: sudo groupadd tomcat
