@@ -2,6 +2,10 @@
 
 echo "Installing prerequisites..."
 
+# INSTALL UTILITIES ****************************
+echo "Installing Boot up manager..."
+sudo apt-get install bum
+echo "Finished installing Boot up manager."
 
 # INSTALL APACHE *******************************
 echo "Installing Apache..."
