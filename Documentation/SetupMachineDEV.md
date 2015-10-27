@@ -54,7 +54,7 @@ export CATALINA_HOME=/opt/tomcat
 **Tomcat permissions**
 - Run command: `sudo groupadd tomcat`
 - Run command: `sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat`
-- Open /opt/tomcat/conf/tomcat-users.xml and add the following lines to the <tomcat-users> element, `<password>` replaced with the correct password:
+- Open /opt/tomcat/conf/tomcat-users.xml and add the following lines to the `<tomcat-users>` element, `<password>` replaced with the correct password:
 
 ```sh
 <role rolename="manager-gui"/>
