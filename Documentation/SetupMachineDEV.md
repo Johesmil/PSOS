@@ -1,6 +1,7 @@
 # Setup Machine: DEV
+This document describes how to set up a new DEV environment for PSOS.
 
-## Main Setup
+## Run main setup script
 
 - Open the /MachineSetup/DEV directory in a terminal window
 - Run command: `chmod 755 Setup.Main` (only needed once)
@@ -13,22 +14,22 @@
 - Install GitEye @ http://www.collab.net/products/giteye
 - Connect to the johesmil/PSOS repository at GitHub and fetch files. Put in ~/git/PSOS directory
 
-### Apache2
+## Configure Apache2
 
 - Run command: `sudo cp -R ~/git/PSOS/MachineSetup/DEV/000-default.conf /etc/apache2/sites-available`
 - Run command: `sudo service apache2 restart`
 - Open localhost in browser and verify it works.
 
-### Apache Tomcat
+## Install and configure Apache Tomcat
 *Requires Java (7) to be installed*
 
-#### Sources
-http://www.liquidweb.com/kb/how-to-install-apache-tomcat-8-on-ubuntu-14-04/
-http://www.krizna.com/ubuntu/install-tomcat-7-ubuntu-14-04/
-https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-14-04
+### Sources
+http://www.liquidweb.com/kb/how-to-install-apache-tomcat-8-on-ubuntu-14-04/  
+http://www.krizna.com/ubuntu/install-tomcat-7-ubuntu-14-04/  
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-14-04  
 
 
-#### Install and setup Tomcat
+### Install and setup Tomcat
 
 - Run command: `wget http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz`
 - Run command: `tar xvzf apache-tomcat-8.0.28.tar.gz`
@@ -45,7 +46,7 @@ export CATALINA_HOME=/opt/tomcat
 - Verify that Tomcat is started by opening localhost:8080 in browser
 
 
-#### Setup permissions
+### Setup permissions
 *These steps will create group and user called tomcat, and set their permissions to run the service.*
 
 **Current user permissions (I think)**
@@ -69,9 +70,10 @@ export CATALINA_HOME=/opt/tomcat
 - Run command: `sudo mkdir -p /opt/tomcat/{work, temp. logs}`
 - Run command: `sudo chown -R tomcat work/ temp/ logs/`
 
-#### Create service
+### Create service
 - Run command: `sudo cp -R ~/git/PSOS/MachineSetup/DEV/tomcat8028 /etc/init.d`
 - Run command: `sudo /etc/init.d/tomcat8028 start`
 - Run command: `sudo update-rc.d tomcat8028 defaults`
+
 
 
