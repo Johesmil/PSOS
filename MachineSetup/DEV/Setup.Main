@@ -4,18 +4,21 @@ echo "Installing prerequisites..."
 
 # INSTALL UTILITIES ****************************
 echo "Installing Boot up manager..."
-sudo apt-get install bum
+sudo apt-get -y install bum
 echo "Finished installing Boot up manager."
 
 # INSTALL APACHE *******************************
 echo "Installing Apache..."
-sudo apt-get install apache2
+sudo apt-get -y install apache2
 echo "Finished installing Apache."
 
 # INSTALL JAVA DEVELOPMENT KIT *****************
 echo "Installing Java Development Kit..."
-sudo apt-get install default-jdk
+sudo apt-get -y install default-jdk
 echo "Finished installing Java Development Kit."
+
+
+# INSTALL DEV TOOLS ****************************
 
 
 echo "Finished installing prerequisites."
