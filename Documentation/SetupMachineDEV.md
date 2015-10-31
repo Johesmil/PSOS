@@ -14,13 +14,13 @@ This document describes how to set up a new DEV environment for PSOS.
 - Install GitEye @ http://www.collab.net/products/giteye
 - Connect to the johesmil/PSOS repository at GitHub and fetch files. Put in ~/git/PSOS directory
 
-## Configure Apache2
+## Setup Apache2
 
 - Run command: `sudo cp -R ~/git/PSOS/MachineSetup/DEV/000-default.conf /etc/apache2/sites-available`
 - Run command: `sudo service apache2 restart`
 - Open localhost in browser and verify it works.
 
-## Install and configure Apache Tomcat
+## Setup Apache Tomcat
 *Requires Java (7) to be installed*
 
 ### Sources
@@ -29,7 +29,7 @@ http://www.krizna.com/ubuntu/install-tomcat-7-ubuntu-14-04/
 https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-14-04  
 
 
-### Install and setup Tomcat
+### Setup Tomcat
 
 - Run command: `wget http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz`
 - Run command: `tar xvzf apache-tomcat-8.0.28.tar.gz`
@@ -75,5 +75,34 @@ export CATALINA_HOME=/opt/tomcat
 - Run command: `sudo /etc/init.d/tomcat8028 start`
 - Run command: `sudo update-rc.d tomcat8028 defaults`
 
+## Setup Postfix email server
+
+### Sources
+https://help.ubuntu.com/community/MailServer
+
+### Setup Postfix (Mail Transfer Agent)
+
+- Run command: `./Setup.Postfix`
+- When prompted, select the following options:
+-- Type of mail configuration: `Internet site`
+-- System mail name: `PsosDev`
+-- Root and postmaster mail recipient: `Johannes` (or whatever your user is)
+-- Other destinations to accept mail for: `PsosDev, johannesDev, localhost.localdomain, localhost`
+-- Force synchronous updates on mail queue: `No`
+-- Local networks: `127.0.0.0/8`
+-- Mailbox size limit: `0`
+-- Local address extension character: `+`
+-- Internet protocols to use: `all`
+
+
+#### Restart postfix
+
+- Run command: `sudo /etc/init.d/postfix restart`
+
+
+### Setup Mail filtering
+*Not needed for DEV environment*
+
+### Setup Mail Delivery Agent
 
 

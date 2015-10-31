@@ -1,0 +1,7 @@
+#!/bin/bash
+
+CURRENTDIR="$( dirname ${BASH_SOURCE[0]} )"
+
+echo $CURRENTDIR
+
+sudo cp -R $CURRENTDIR/saslauthd ~

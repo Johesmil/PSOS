@@ -2,6 +2,9 @@
 
 echo "Installing prerequisites..."
 
+# UPDATE INSTALLER *****************************
+sudo apt-get update
+
 # INSTALL UTILITIES ****************************
 echo "Installing Boot up manager..."
 sudo apt-get -y install bum

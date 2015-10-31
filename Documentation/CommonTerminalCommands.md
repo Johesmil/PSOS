@@ -31,6 +31,15 @@
 
 *Example 2, multiple directories: `sudo mkdir -p /opt/tomcat/{work,temp,logs}`*
 
+**Get the directory of the bash file**  
+`CURRENTDIR="$( dirname ${BASH_SOURCE[0]} )"`
+
+**Append text to file**  
+`sed -i '$a text to append' /fileToAppendTo`
+
+**Make file executable**  
+`chmod +x /filePath`
+
 **View running services (needs to have bum installed)**  
 `sudo bum`
 
