@@ -58,3 +58,13 @@
 
 **Stop service**  
 `sudo /etc/init.d/tomcat8028 stop`
+
+## Postfix
+**Check service status**  
+`sudo postfix status`
+
+**Start service**  
+`sudo postfix start`
+
+**Stop service**  
+`sudo postfix stop`

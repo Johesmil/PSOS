@@ -20,6 +20,40 @@ echo "Installing Java Development Kit..."
 sudo apt-get -y install default-jdk
 echo "Finished installing Java Development Kit."
 
+# INSTALL NVM *****************
+echo "Installing NVM..."
+curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | bash
+# Need to open new terminal window here!
+nvm install 4.4.2
+echo "Finished installing NVM."
+
+
+# INSTALL NODE.JS ******************************
+echo "Installing Node.js..."
+
+
+sudo apt-get -y install nodejs #DON'T USE THESE!!!
+sudo apt-get -y install npm #DON'T USE THESE!!!
+
+echo "Finished installing Node.js."
+
+# INSTALL GRUNT ********************************
+echo "Installing Grunt..."
+sudo npm install -g grunt-cli
+echo "Finished installing Grunt."
+
+# INSTALL Yeoman *******************************
+echo "Installing Yeoman..."
+sudo npm install -g yo
+sudo npm install -g generator-webapp
+echo "Finished installing Yeoman."
+
+# INSTALL Bower ********************************
+echo "Installing Bower..."
+sudo npm install -g bower
+echo "Finished installing Bower."
+
+
 
 # INSTALL DEV TOOLS ****************************
 

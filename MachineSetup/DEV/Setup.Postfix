@@ -83,7 +83,7 @@ sudo apt-get -y install sasl2-bin
 sudo apt-get -y install libsasl2-modules
 CURRENTDIR="$( dirname ${BASH_SOURCE[0]} )"
 sudo cp -R $CURRENTDIR/saslauthd /etc/default
-sudo dpkg-statoverride --force --update --add root sasl 755 /var/spool/postfix/var/run/saslauthd
+sudo dpkg-statoverride --force --update --add root sasl 755 /var/spool/sudo postfix/var/run/saslauthd
 #sudo ln -s /etc/default/saslauthd /etc/saslauthd
 echo "Finished "$currentActivity"."
 

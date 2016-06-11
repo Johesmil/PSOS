@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Setting up Dovecot..."
+
+# UPDATE INSTALLER
+sudo apt-get update
+
+# Install Dovecot 
+currentActivity="Installing Dovecot"
+echo $currentActivity"..."
+#sudo apt-get -y install dovecot-imapd dovecot-pop3d
+echo "Finished "$currentActivity"."
+

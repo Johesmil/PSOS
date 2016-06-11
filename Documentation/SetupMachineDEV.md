@@ -29,7 +29,7 @@ http://www.krizna.com/ubuntu/install-tomcat-7-ubuntu-14-04/
 https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-14-04  
 
 
-### Setup Tomcat
+## Setup Tomcat
 
 - Run command: `wget http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz`
 - Run command: `tar xvzf apache-tomcat-8.0.28.tar.gz`
@@ -79,8 +79,10 @@ export CATALINA_HOME=/opt/tomcat
 
 ### Sources
 https://help.ubuntu.com/community/MailServer
+https://help.ubuntu.com/community/Postfix
+https://help.ubuntu.com/community/Dovecot
 
-### Setup Postfix (Mail Transfer Agent)
+### Setup Mail Transfer Agent (Postfix)
 
 - Run command: `./Setup.Postfix`
 - When prompted, select the following options:
@@ -94,15 +96,39 @@ https://help.ubuntu.com/community/MailServer
 -- Local address extension character: `+`
 -- Internet protocols to use: `all`
 
-
-#### Restart postfix
-
-- Run command: `sudo /etc/init.d/postfix restart`
+#### Verify setup
+- Run command: `telnet localhost 25`
+- Run command: `ehlo localhost`
+- Verify that you see the lines '250-STARTTLS' and '250-AUTH' (among others)
+- Run command: `quit` to return to system shell
 
 
 ### Setup Mail filtering
 *Not needed for DEV environment*
 
-### Setup Mail Delivery Agent
+
+### Setup Mail Delivery Agent (Dovecot)
+- Run command: `sudo apt-get -y install dovecot-imapd dovecot-pop3d`. Confirm prompt to create self-signed certificate. Use localhost as server name.
+- Run command: `sudo cp -R ~/git/PSOS/MachineSetup/DEV/dovecot.conf /etc/dovecot`
+- Run commands: 
+
+```sh
+sudo maildirmake.dovecot /etc/skel/Maildir
+sudo maildirmake.dovecot /etc/skel/Maildir/.Drafts
+sudo maildirmake.dovecot /etc/skel/Maildir/.Sent
+sudo maildirmake.dovecot /etc/skel/Maildir/.Trash
+sudo maildirmake.dovecot /etc/skel/Maildir/.Templates
+
+```
+
+- Run command: `sudo cp -r /etc/skel/Maildir /home/johannes/`
+- Run command: `sudo chown -R johannes /home/johannes/Maildir`
+- Run command: `sudo chmod -R 700 /home/johannes/Maildir`
+- Run command: `sudo start dovecot`
+
+
+
+### Setup Mailing lists
+
 
 
